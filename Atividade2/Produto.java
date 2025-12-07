@@ -4,6 +4,7 @@ public class Produto {
     String codigoProduto;
     String nome;
     double preco;
+    boolean vendido;
 
     public Produto(String codigo, String nome, double preco){
         this.codigoProduto = codigo;
@@ -25,5 +26,13 @@ public class Produto {
 
     public void setPreco(double preco){
         this.preco = preco;
+    }
+
+    public void setStatus(boolean vendido){
+        this.vendido = vendido;
+    }
+
+    public boolean getStatus(){
+        return this.vendido;
     }
 }

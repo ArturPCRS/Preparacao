@@ -2,11 +2,11 @@ package Atividade2;
 
 public class Pedido {
     String codigoPedido;
-    String nomeCliente;
+    String CPFCliente;
 
-    public Pedido(String codigo, String nome){
+    public Pedido(String codigo, String CPF){
         this.codigoPedido = codigo;
-        this.nomeCliente = nome;
+        this.CPFCliente = CPF;
     }
 
     public String getCodigoPedido(){
@@ -14,6 +14,6 @@ public class Pedido {
     }
 
     public String getPedidoCliente(){
-        return this.nomeCliente;
+        return this.CPFCliente;
     }
 }
