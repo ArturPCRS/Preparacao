@@ -70,10 +70,23 @@ public class Consultas {
 
     public void faturamento(){
         Cadastros c = Cadastros.getInstance();
-        List<Produto> produtosTotal = c.listaProdutos;
+        double total = 0;
 
         Map<Pedido, Cliente> pedidosCliente = c.pedidosCliente;
         List<Cliente> listaClientes = c.listaClientes;
 
+        for (Map.Entry<Pedido, Cliente> entry : pedidosCliente.entrySet()){
+            for (Cliente cliente : listaClientes){
+                if (cliente.equals(entry.getValue())){
+                    List<Produto> produtos = entry.getKey().getProdutos();
+                    for (Produto p : produtos){
+                        if (p.getVendido() == true){
+                            total = p.getPreco() * listaClientes.size();
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("Faturamento total: " + total);
     }
 }
